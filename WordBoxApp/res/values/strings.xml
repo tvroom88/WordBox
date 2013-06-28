@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WordBoxApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_play_game">PlayGame</string>
+    <string name="title_activity_four_problem">FourProblem</string>
+    <string name="title_activity_oxquiz">OXquizActivity</string>
+    <string name="title_activity_play_games">PlayGames</string>
+
+</resources>
