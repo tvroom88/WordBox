@@ -24,21 +24,21 @@
         </activity>
         <activity android:name="com.wordbox.BlankActivity" >
         </activity>
-        <activity android:name="com.wordbox.market.MarketActivity" >
+        <activity android:name="com.workbox.mainTabView.MarketActivity" >
         </activity>
         <activity android:name="com.wordbox.market.MarketTabbarActivity" >
         </activity>
         <activity android:name="com.wordbox.my.MylistActivity" >
         </activity>
-        <activity android:name="com.wordbox.my.Mypage" >
+        <activity android:name="com.workbox.mainTabView.Mypage" >
         </activity>
         <activity android:name="com.wordbox.my.MyTabbar" >
         </activity>
-        <activity android:name="com.wordbox.setting.SettingActivity" >
+        <activity android:name="com.workbox.mainTabView.SettingActivity" >
         </activity>
         <activity android:name="com.wordbox.wordActivity.TofleWordActivity" >
         </activity>
-        <activity android:name="com.wordbox.wordActivity.WordActivity" >
+        <activity android:name="com.workbox.mainTabView.WordActivity" >
         </activity>
         <activity android:name="com.wordbox.wordActivity.WordTabbarActivity" >
         </activity>

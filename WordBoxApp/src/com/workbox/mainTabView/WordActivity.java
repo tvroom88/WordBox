@@ -1,4 +1,4 @@
-package com.wordbox.wordActivity;
+package com.workbox.mainTabView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.wordboxapp.R;
+import com.wordbox.wordActivity.WordTabbarActivity;
 
 public class WordActivity extends Activity {
 	int type=0;

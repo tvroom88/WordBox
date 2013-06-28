@@ -2,6 +2,7 @@ package com.wordbox;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,10 +17,10 @@ import android.widget.TabWidget;
 
 import com.example.wordboxapp.R;
 import com.utils.CompFactory;
-import com.wordbox.market.MarketActivity;
 import com.wordbox.my.MyTabbar;
-import com.wordbox.setting.SettingActivity;
-import com.wordbox.wordActivity.WordActivity;
+import com.workbox.mainTabView.MarketActivity;
+import com.workbox.mainTabView.SettingActivity;
+import com.workbox.mainTabView.WordActivity;
 
 public class MainActivity extends TabActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends TabActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		Resources res = getResources();
 		final TabHost tabHost = getTabHost(); 
@@ -62,7 +64,7 @@ public class MainActivity extends TabActivity {
 		spec = tabHost.newTabSpec("tag2").setIndicator("")
 				.setContent(intent);
 		tabHost.addTab(spec);
-		tabHost.getTabWidget().getChildAt(2).setBackgroundResource(R.drawable.word1);
+		tabHost.getTabWidget().getChildAt(2).setBackgroundResource(R.drawable.word);
 		tabHost.getTabWidget().getChildTabViewAt(2).setLayoutParams(CompFactory.getLinearLayoutParam(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,1));
 		// ¼¼¹øÂ° ÅÇ(3)
 		intent = new Intent(this, MyTabbar.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -84,6 +86,7 @@ public class MainActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 		
+		tabHost.setCurrentTab(2);
 		
 		//----------------------------------------------------------------------------
 		tabHost.getTabWidget().getChildTabViewAt(5).setVisibility(View.GONE);
