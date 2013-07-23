@@ -1,8 +1,10 @@
 package com.wordbox.wordActivity;
 
+import android.app.Activity;
 import android.app.ActivityGroup;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,7 +22,7 @@ import com.example.wordboxapp.R;
 import com.wordbox.gameview.FourProblemGameView;
 import com.wordbox.gameview.OXGameView;
 
-public class PlayGame extends ActivityGroup 
+public class PlayGame extends Activity 
 {
 	int type = 0;
 	PlayGame playGame = this;
@@ -34,6 +37,16 @@ public class PlayGame extends ActivityGroup
 	//Game First View
 	public void GameView()
 	{
+		LinearLayout ll = (LinearLayout)findViewById(R.id.linearLayout1);
+		
+		TextView tv1 = new TextView(this);
+		tv1.setText("hi");
+		
+		ll.addView(tv1);
+		
+		
+		int a = 20;
+		
 		setContentView(R.layout.play_game);
 
 		//첫번쨰 나눔(초급)
@@ -45,11 +58,8 @@ public class PlayGame extends ActivityGroup
 
 		//1번쨰 버튼 
 		RelativeLayout flashCardLayout = (RelativeLayout)findViewById(R.id.relativelayot1);
-		ImageView imageView1 = (ImageView)findViewById(R.id.imageView1);
-		imageView1.setBackgroundResource(R.drawable.sample);
-		imageView1.setMinimumHeight(100);
-		imageView1.setMinimumWidth(100);
-
+		flashCardLayout.addView(tv1);
+		
 		//2번쨰 나눔(중급)
 		TextView textView2 = (TextView)findViewById(R.id.textView2);
 		textView2.setBackgroundColor(Color.GRAY);

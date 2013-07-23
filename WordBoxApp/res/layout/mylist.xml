@@ -1,6 +1,68 @@
-<TableLayout 
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/relativelayout">
+
+<TableLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:id="@+id/tablelayout">
-</TableLayout>
+    
+    <!--  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    
+    <LinearLayout
+        android:id="@+id/wordListNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/test_list_navi_01"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/wordListLeftNav"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/wordListRightNav"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+    
+     </RelativeLayout>-->!
+     
+	</TableLayout>
+	
+<LinearLayout
+        android:id="@+id/wordListNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/test_list_navi_01"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/wordListLeftNav"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/wordListRightNav"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+	
+</RelativeLayout>

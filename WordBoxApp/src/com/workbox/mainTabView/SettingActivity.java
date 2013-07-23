@@ -1,115 +1,172 @@
 package com.workbox.mainTabView;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 
 import com.example.wordboxapp.R;
+import com.utils.CompFactory;
+import com.utils.MarginPadding;
 
 public class SettingActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_setting);
-		 
-		RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.relativelayout);
-		LinearLayout linearLayout1 = (LinearLayout)findViewById(R.id.linearlayout1); 
-		LinearLayout linearLayout  = (LinearLayout)findViewById(R.id.linearlayout);
-
 		
-        TextView textview1 = new TextView(this);
-        TextView textview2 = new TextView(this);
-       
-       
-       
-        textview1.setTextSize(25);
-        textview1.setText("만든 사람들");
-        textview1.setBackgroundResource(R.layout.textviewshapes);
-        
-      
-        textview2.setTextSize(25);
-        textview2.setText("이재홍 : 안드로이드"+"\n"+"이재훈 : 서버"+"\n"+"안명희 : 디자인");
-        textview2.setBackgroundResource(R.layout.textviewshapesss);
-       
-        linearLayout1.addView(textview1);
-        linearLayout1.addView(textview2);
-        
-        RelativeLayout.LayoutParams buttonParams1 = new RelativeLayout.LayoutParams(
-				ViewGroup.LayoutParams.MATCH_PARENT,
-				ViewGroup.LayoutParams.MATCH_PARENT);
-        	
-        textview1.setPadding(20, 10, 0, 10);
-        textview2.setPadding(20, 10, 0, 10);
-        linearLayout1.setLayoutParams(buttonParams1);   
-
-//-----------------------------------------------------------
-        
-      
-        
-        TextView tv1 = new TextView(this);
-        TextView tv2 = new TextView(this);
-        TextView tv3 = new TextView(this);
-        TextView tv4 = new TextView(this);
-        TextView tv5 = new TextView(this);
-        TextView tv6 = new TextView(this);
-        TextView tv7 = new TextView(this);
-        
-     
-        tv1.setText("알림");  
-        tv3.setText("도움말");
-        tv5.setText("업데이트");   
-        tv7.setText("고객문의");
-      
-        tv1.setTextSize(25);  
-        tv3.setTextSize(25);
-        tv5.setTextSize(25);
-        tv7.setTextSize(25);
-       
-        tv1.setBackgroundResource(R.layout.textviewshapes);
-        tv3.setBackgroundResource(R.layout.textviewshapess);
-        tv5.setBackgroundResource(R.layout.textviewshapess);
-        tv7.setBackgroundResource(R.layout.textviewshapesss);
-        
-        linearLayout.addView(tv1);
-        linearLayout.addView(tv3);
-        linearLayout.addView(tv5);
-        linearLayout.addView(tv7);
-        
-        RelativeLayout.LayoutParams buttonParams2 = new RelativeLayout.LayoutParams(
-				ViewGroup.LayoutParams.MATCH_PARENT,
-				ViewGroup.LayoutParams.WRAP_CONTENT);
-        	buttonParams2.topMargin=360;
-        tv1.setPadding(20, 15, 0, 0);
-        tv3.setPadding(20, 5, 0, 5);  	
-        tv5.setPadding(20, 5, 0, 5);
-        tv7.setPadding(20, 5, 0, 10);
-        
-        linearLayout.setBackgroundResource(R.layout.textviewshape);		
-        linearLayout.setPadding(0, 0, 0, 0);
-        linearLayout.setLayoutParams(buttonParams2);   
-       
-       
-        
-//-----------------------------------------------------------------------------------------        
-
-        TextView textview3 = new TextView(this);
-        RelativeLayout.LayoutParams buttonParams3 = new RelativeLayout.LayoutParams(
-				ViewGroup.LayoutParams.MATCH_PARENT,
-				ViewGroup.LayoutParams.WRAP_CONTENT);
-        	buttonParams3.topMargin=770;
-       
-        	textview3.setTextSize(25);
-        	textview3.setLayoutParams(buttonParams3);
-        	textview3.setPadding(20, 10, 0, 10);
-        	textview3.setText("로그인");	        
-        	textview3.setBackgroundResource(R.layout.textviewshape);
-        
-
-        relativeLayout.addView(textview3);
-        
+		setting();
+		
+	        
 	}
+	
+	public void setting(){
+		
+		setContentView(R.layout.activity_setting);
+	
+		//만든사람들------------------------------------------
+		
+		TextView MPText1 = CompFactory.detailTextView(this, Color.TRANSPARENT, Color.BLUE, "만든사람들", 15, new MarginPadding(0,20,0,0), new MarginPadding(), 
+				Gravity.CENTER_HORIZONTAL, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		MPText1.setGravity(Gravity.CENTER_HORIZONTAL);
+		
+		RelativeLayout MadePeople = (RelativeLayout)findViewById(R.id.MadePeople);
+		MadePeople.addView(MPText1);
+		
+		
+		//이재훈, 이재홍, 안명희 부분-------------------------------
+		LayoutParams textParam1 = new LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			textParam1.weight=1;
+		TextView MPText2 = new TextView(this);
+		MPText2.setText("이재훈" + "\n" + "iphone");
+		MPText2.setGravity(Gravity.CENTER);
+		MPText2.setLayoutParams(textParam1);
+		
+		
+		LayoutParams textParam2 = new LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			textParam2.weight=1;
+		TextView MPText3 = new TextView(this);
+		MPText3.setText("이재홍" + "\n" + "android");
+		MPText3.setGravity(Gravity.CENTER);
+		MPText3.setLayoutParams(textParam2);
+		
+		LayoutParams textParam3 = new LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			textParam3.weight=1;
+		TextView MPText4 = new TextView(this);
+		MPText4.setText("안명희" + "\n" + "design");
+		MPText4.setGravity(Gravity.CENTER);
+		MPText4.setLayoutParams(textParam3);
+	
+		LinearLayout MadePeoPle1 = (LinearLayout)findViewById(R.id.MadePeople2);
+		MadePeoPle1.addView(MPText2);
+		MadePeoPle1.addView(MPText3);
+		MadePeoPle1.addView(MPText4);
+		
+		
+		//아래 이미지 부분--------------------------
+		RelativeLayout.LayoutParams Params1 = new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			Params1.setMargins(160, 0, 0, 0);
+		
+		final ImageView img1 = new ImageView(this);
+		img1.setBackgroundResource(R.drawable.settingimage1);
+		img1.setLayoutParams(Params1);
+		
+		img1.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// TODO 자동 생성된 메소드 스텁
+				  if(MotionEvent.ACTION_DOWN == event.getAction()){
+				       //액션 정의
+					  img1.setBackgroundResource(R.drawable.settingimage11);
+				   }
+				      if(MotionEvent.ACTION_UP == event.getAction()){
+				      //액션 정의
+				   img1.setBackgroundResource(R.drawable.settingimage1);
+				 }
+				     
+				return true;
+			}
+		});
+		
+		RelativeLayout.LayoutParams Params2 = new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			Params2.setMargins(0, 8, 160, 0);
+			Params2.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+			
+		ImageView img2 = new ImageView(this);
+		img2.setBackgroundResource(R.drawable.settingimage2);
+		img2.setLayoutParams(Params2);
+		
+		RelativeLayout.LayoutParams Params3 = new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			Params3.setMargins(160, 0, 0, 0);
+	
+			
+		ImageView img3 = new ImageView(this);
+		img3.setBackgroundResource(R.drawable.settingimage3);
+		img3.setLayoutParams(Params3);
+		
+		RelativeLayout.LayoutParams Params4 = new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT,
+				ViewGroup.LayoutParams.WRAP_CONTENT);
+			Params4.setMargins(0, 8, 160, 0);
+			Params4.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+			
+		ImageView img4 = new ImageView(this);
+		img4.setBackgroundResource(R.drawable.settingimage4);
+		img4.setLayoutParams(Params4);
+		
+		RelativeLayout imagelayout1 = (RelativeLayout)findViewById(R.id.settinglayout1);
+		imagelayout1.addView(img1);
+		imagelayout1.addView(img2);
+		
+		
+		RelativeLayout imagelayout2 = (RelativeLayout)findViewById(R.id.settinglayout2);
+		imagelayout2.addView(img3);
+		imagelayout2.addView(img4);
+		
+		
+		
+		RelativeLayout.LayoutParams LoginParam = new RelativeLayout.LayoutParams(
+				500,
+				80);
+			LoginParam.addRule(RelativeLayout.CENTER_HORIZONTAL);
+			
+		TextView LoginText = new TextView(this);
+		
+		LoginText.setText("로그인");
+		LoginText.setGravity(Gravity.CENTER);
+		LoginText.setTextSize(20);
+		LoginText.setTextColor(Color.BLACK);
+		LoginText.setBackgroundColor(Color.WHITE);
+		LoginText.setBackgroundResource(R.layout.textviewshapess);
+		LoginText.setLayoutParams(LoginParam);
+		
+		
+		RelativeLayout LoginLayout = (RelativeLayout)findViewById(R.id.loginlayout);
+		LoginLayout.addView(LoginText);
+	}
+	
+	
+	 
 }

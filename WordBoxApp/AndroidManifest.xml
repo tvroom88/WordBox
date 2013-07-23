@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.wordbox.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +31,7 @@
         </activity>
         <activity android:name="com.wordbox.my.MylistActivity" >
         </activity>
-        <activity android:name="com.workbox.mainTabView.Mypage" >
+        <activity android:name="com.wordbox.my.Mypage" >
         </activity>
         <activity android:name="com.wordbox.my.MyTabbar" >
         </activity>
@@ -38,7 +39,9 @@
         </activity>
         <activity android:name="com.wordbox.wordActivity.TofleWordActivity" >
         </activity>
-        <activity android:name="com.workbox.mainTabView.WordActivity" >
+        <activity
+            android:name="com.workbox.mainTabView.WordActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity android:name="com.wordbox.wordActivity.WordTabbarActivity" >
         </activity>

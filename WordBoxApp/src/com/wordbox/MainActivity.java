@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
@@ -18,6 +19,7 @@ import android.widget.TabWidget;
 import com.example.wordboxapp.R;
 import com.utils.CompFactory;
 import com.wordbox.my.MyTabbar;
+import com.wordbox.my.MylistActivity;
 import com.workbox.mainTabView.MarketActivity;
 import com.workbox.mainTabView.SettingActivity;
 import com.workbox.mainTabView.WordActivity;
@@ -27,8 +29,11 @@ public class MainActivity extends TabActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+	            WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		Resources res = getResources();
@@ -67,7 +72,7 @@ public class MainActivity extends TabActivity {
 		tabHost.getTabWidget().getChildAt(2).setBackgroundResource(R.drawable.word);
 		tabHost.getTabWidget().getChildTabViewAt(2).setLayoutParams(CompFactory.getLinearLayoutParam(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,1));
 		// ¼¼¹øÂ° ÅÇ(3)
-		intent = new Intent(this, MyTabbar.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent = new Intent(this, MylistActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		spec = tabHost.newTabSpec("tag3").setIndicator("")
 				.setContent(intent);
 		tabHost.addTab(spec);

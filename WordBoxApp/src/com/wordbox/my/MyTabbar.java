@@ -11,7 +11,6 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 import com.example.wordboxapp.R;
-import com.workbox.mainTabView.Mypage;
 
 public class MyTabbar extends TabActivity {
 
